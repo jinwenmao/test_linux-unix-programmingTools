@@ -1,5 +1,5 @@
 #include "input.h"
-
+#include <stdio.h>
 double input(const char *s)
 {
 	float x;
