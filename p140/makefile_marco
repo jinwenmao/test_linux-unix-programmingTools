@@ -13,3 +13,4 @@ all.tar: $(SOURCES) $(HEADERS) makefile
 	tar -cvf - $(SOURCES) $(HEADS) makefile > all.tar
 clean:
 	rm *.o $(TARGET)
+.PHONY: clean
