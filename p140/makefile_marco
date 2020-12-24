@@ -1,0 +1,15 @@
+CC = gcc 
+OPTIONS = -o 
+OBJECTS = main.o input.o compute.o
+SOURCES = main.c input.c compute.c
+HEADS = main.h input.h compute.h
+TARGET = power
+power: $(OBJECTS)
+	$(CC) $(OBJECTS) $(OPTIONS) $(TARGET) -lm
+main.o: main.h input.h compute.h
+input.o: input.h
+compute.o: compute.h
+all.tar: $(SOURCES) $(HEADERS) makefile
+	tar -cvf - $(SOURCES) $(HEADS) makefile > all.tar
+clean:
+	rm *.o $(TARGET)
